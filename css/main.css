@@ -1,0 +1,205 @@
+/* DT200G - Grafisk teknik för webb
+ * Moment 2
+ * Linn Eriksson, VT24
+ */
+
+
+/*Importing fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+/*General settings such as border-box etc.*/
+html {
+    /*62.5% of 16px => 10px*/
+    font-size: 62.5%;
+    box-sizing: border-box;
+    font-family: Verdana, Tahoma, sans-serif;
+    height: 100%;
+}
+
+/*Background color and such*/
+body {
+    background: #f1f1f1;
+    margin: 0;
+}
+
+/*Hide skiplink on mobile*/
+.skiplink {
+    display: none;
+}
+
+/*Header*/
+header {
+    background: #200;
+    border-bottom: 2px solid #800;
+    padding: 2%;
+    margin: 0;
+    text-align: center;
+    font-size: 1.6em;
+}
+
+header>a {
+    color: #f1f1f1;
+    text-decoration: none;
+}
+
+
+/*Layout for navigation*/
+nav {
+    margin: 0;
+    font-size: 1.6em;
+    font-weight: bold;
+    font-family: 'Space Mono', monospace;
+    text-align: center;
+    background: #200;
+    border-bottom: 4px solid #200;
+}
+
+/*Give links in the nav-list the illusion of being buttons.*/
+nav>ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav>ul>li {
+    margin: 0;
+    text-align: center;
+    border-left: 4px solid #200;
+}
+
+nav>ul>li>a {
+    display: block;
+    text-decoration: none;
+    color: #f1f1f1;
+    padding: 15px 30px;
+    margin: 0;
+}
+
+nav>ul>li:hover a,
+nav>ul>li a.current {
+    color: #200;
+    background: #f1f1f1;
+    border: 2px solid #f1f1f1;
+}
+
+/*Main-content, wrapper and such*/
+#wrapper {
+    max-width: 1000px;
+    background: #f1f1f1;
+    margin: auto;
+}
+
+main {
+    background: #f1f1f1;
+    padding: 1%;
+    margin: 1%;
+    font-size: 1.6em;
+    border: 2px solid #800;
+    border-radius: 10px;
+}
+
+main>p {
+    max-width: 600px;
+}
+
+/*Headers*/
+h1,
+h2,
+h3 {
+    font-family: 'Space Mono', monospace;
+}
+
+h2 {
+    border-bottom: 2px solid #800;
+}
+
+/*Buttons*/
+.button {
+    padding: 2%;
+    margin: 2%;
+    background: #200;
+    color: #f1f1f1;
+    text-decoration: none;
+    border-radius: 5px;
+    border: 2px solid #800;
+}
+
+.button:hover {
+    background: #f1f1f1;
+    color: #200;
+}
+
+
+
+/*Footer*/
+footer {
+    background: #200;
+    padding: 2%;
+    margin: 0;
+    font-size: 1.6em;
+}
+
+footer>p {
+    width: 100%;
+    text-align: center;
+    color: #f1f1f1;
+}
+
+footer>p>a {
+    color: #f1f1f1;
+}
+
+/*Changes for large screens*/
+@media only screen and (min-width: 750px) {
+
+    /*Skiplink now exists*/
+    .skiplink {
+        display: inline;
+        height: 1px;
+        width: 1px;
+        margin: -1px;
+        padding: 0;
+        margin: 0;
+        overflow: hidden;
+        position: fixed;
+        left: 10px;
+        top: 10px;
+        border: 1px solid #f1f1f1;
+    }
+
+    .skiplink:focus {
+        width: auto;
+        height: auto;
+        background-color: #200;
+        color: #f1f1f1;
+        text-align: center;
+        padding: 2%;
+        border-radius: 10px;
+        border: 1px solid #f1f1f1;
+        margin: 10px 0 0 10px;
+        z-index: 99;
+    }
+
+    /*Make a navigation bar on larger screen.*/
+    nav {
+        border-top: 5px solid #200;
+        border-bottom: 10px solid #f1f1f1;
+    }
+
+    nav>ul>li {
+        float: left;
+    }
+
+    nav>ul>li>a {
+        min-width: max-content;
+        border-radius: 10px 10px 0 0;
+    }
+}
+
+
+/*Remove float after nav-bar.*/
+nav::after {
+    content: "";
+    clear: both;
+    display: table;
+}
