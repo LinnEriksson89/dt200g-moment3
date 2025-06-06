@@ -102,6 +102,10 @@ main>p {
     max-width: 600px;
 }
 
+p.question {
+    font-family: 'Space Mono', monospace;
+}
+
 /*Headers*/
 h1,
 h2,
@@ -147,6 +151,16 @@ footer>p {
 
 footer>p>a {
     color: #f1f1f1;
+}
+
+/*Backgroundvideo*/
+#backgroundvideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
 }
 
 /*Changes for large screens*/
